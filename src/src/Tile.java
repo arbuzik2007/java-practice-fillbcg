@@ -35,12 +35,14 @@ public class Tile extends JPanel {
     protected void paintComponent(Graphics g) {
         int x = 0, y = 0;
         for (int i = 0; i < borders.height / height + 1; i++) {
-            y += height;
             for (int j = 0; j < borders.width / width + 1; j++) {
                 g.drawImage(texture, x,y,this);
                 x += width;
             }
+            y += height;
+            x = 0;
         }
+        g.dispose();
         super.paintComponent(g);
     }
 }
